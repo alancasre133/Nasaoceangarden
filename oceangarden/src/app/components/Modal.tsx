@@ -1,14 +1,14 @@
 import "@/app/styles/modal.css"
 import Link from "next/link"
-import { Modal } from "../types.d"
+import { Element } from "../types.d"
 
 export function SectionPreviewModal({
-  text,
+  modalText,
   videoSrc,
   href,
   soundSrc,
   closingSoundSrc,
-}: Modal) {
+}: Element) {
   // Close modal when clicking outside of it
   const closeModal = () => {
     // const dialog = document.querySelector("dialog")
@@ -39,7 +39,7 @@ export function SectionPreviewModal({
           />
           <div className="absolute top-0 bottom-0 h-full w-full max-h-screen p-16 bg-slate-900/40 items-end justify-start flex">
             <h2 className="font-semibold text-7xl">
-              <Link href={href}>{text}</Link>
+              <Link href={href}>{modalText}</Link>
             </h2>
             <audio autoPlay loop src={soundSrc}></audio>
           </div>
