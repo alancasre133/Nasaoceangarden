@@ -11,12 +11,12 @@ const LINKS = [
   {
     href: "/?modal=phytoplankton",
     text: "Phytoplankton",
-    sound: "phytoplankton",
+    sound: "underwater",
   },
   {
     href: "/?modal=gardens",
     text: "Explore gardens",
-    sound: "explore",
+    sound: "planc",
   },
 ]
 
