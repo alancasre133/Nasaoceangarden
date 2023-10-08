@@ -1,6 +1,6 @@
 "use client";
 
-import Rocket from "@/components/Model3D/Rocket";
+import Rocket from "@/components/Model3D/rocket";
 
 const Home = () => {
   return (
