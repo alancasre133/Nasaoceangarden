@@ -13,7 +13,7 @@ export function Header() {
   }
 
   return (
-    <header className="flex gap-4 justify-between items-center w-full py-8 z-10">
+    <header className="flex gap-4 justify-between items-center w-full py-4 z-10">
       <Link href="/">
         <Logo />
       </Link>
