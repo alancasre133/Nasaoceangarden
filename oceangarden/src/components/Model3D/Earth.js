@@ -11,7 +11,7 @@ const EarthModel = ({ cameraOrbit = "80deg 65deg 0deg" }) => {
         ar-modes="webxr scene-viewer"
         style={{
           width: "100%",
-          height: "50vh",
+          height: "60vh",
           backgroundColor: "transparent",
         }}
         shadow-intensity="10"
