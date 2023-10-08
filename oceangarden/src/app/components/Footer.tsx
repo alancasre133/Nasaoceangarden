@@ -5,17 +5,17 @@ import { useState } from "react";
 
 const LINKS = [
   {
-    href: "oceans",
+    href: "/?modal=oceans",
     text: "About oceans",
     sound: "oceans",
   },
   {
-    href: "phytoplankton",
+    href: "/?modal=phytoplankton",
     text: "Phytoplankton",
     sound: "phytoplankton",
   },
   {
-    href: "gardens",
+    href: "/?modal=gardens",
     text: "Explore gardens",
     sound: "explore",
   },
