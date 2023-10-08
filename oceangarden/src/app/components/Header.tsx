@@ -2,10 +2,11 @@
 
 import { useState } from "react"
 import { Logo } from "./Logo"
-import { LeftArrowIcon, Volume, VolumeOff } from "./Icons"
+import { Volume, VolumeOff } from "./Icons"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useSectionLinks } from "../hooks/useSectionLinks"
+import { isMobile } from "react-device-detect"
 
 const ROOT_PATH = "/"
 
@@ -41,6 +42,29 @@ export function Header() {
       <Link href="/" className="flex gap-4 items-center hover:text-slate-300">
         <HomeLinkContent />
       </Link>
+      {isMobile === false && (
+        <>
+          <nav className="w-full">
+            <ul className="flex items-center justify-end gap-11 list-none">
+              {isRoot === false &&
+                bareLinks.map(({ href, text }) => (
+                  <li key={href}>
+                    <Link href={href} className="hover:underline">
+                      {text}
+                    </Link>
+                  </li>
+                ))}
+            </ul>
+          </nav>
+
+          <button
+            onClick={toggleAudio}
+            className="flex items-center justify-center"
+          >
+            {isAudioPlaying ? <VolumeOff /> : <Volume />}
+          </button>
+        </>
+      )}
     </header>
   )
 }
