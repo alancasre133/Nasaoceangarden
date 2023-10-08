@@ -1,41 +1,43 @@
 "use client"
 
-import "@/app/styles/modal.css"
 import Link from "next/link"
 import { Element } from "../types.d"
 import { CloseIcon, RightArrowIcon } from "./Icons"
 import { usePathname, useRouter } from "next/navigation"
-import { use, useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import { ELEMENTS } from "../constants"
 
-export function SectionPreviewModal({ modalText, videoSrc, href, soundSrc }: Element) {
+export function SectionPreviewModal({
+  modalText,
+  videoSrc,
+  href,
+  soundSrc,
+}: Element) {
   const router = useRouter()
   const pathname = usePathname()
   const [isAudioPlaying, setIsAudioPlaying] = useState(true)
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null)
 
-
   useEffect(() => {
-    const audio2 = new Audio(`/audio/${soundSrc}`);
-    setAudio(audio2);
-    audio2.play();
+    const audio2 = new Audio(`/audio/${soundSrc}`)
+    setAudio(audio2)
+    audio2.play()
 
     return () => {
       if (audio2) {
-        audio2.pause();
-        setAudio(null);
+        audio2.pause()
+        setAudio(null)
       }
-    };
-  }, []);
+    }
+  }, [])
 
   const closeModal = () => {
     if (audio) {
-      audio.pause();
-      setAudio(null);
+      audio.pause()
+      setAudio(null)
     }
-    router.push(pathname);
-  };
-
+    router.push(pathname)
+  }
 
   const playAudio = (text: string) => () => {
     if (!audio) {
@@ -72,7 +74,11 @@ export function SectionPreviewModal({ modalText, videoSrc, href, soundSrc }: Ele
             </button>
             <header className="flex justify-between w-full gap-4 items-baseline">
               <h2 className="font-semibold text-5xl">{modalText}</h2>
-              <Link href={href} onClick={closeModal} className="flex items-center gap-3">
+              <Link
+                href={href}
+                onClick={closeModal}
+                className="flex items-center gap-3"
+              >
                 <span className="text-2xl">Learn more</span>
                 <RightArrowIcon />
               </Link>
