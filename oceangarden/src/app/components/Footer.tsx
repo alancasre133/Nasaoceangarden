@@ -18,7 +18,7 @@ const LINKS = [
 export function Footer() {
   return (
     <footer className="z-10 w-full pt-4">
-      <ul className="flex flex-col gap-2 md:flex-row justify-between items-center flex-wrap">
+      <ul className="flex flex-col gap-28 md:flex-row items-center justify-center flex-wrap">
         {LINKS.map(({ href, text }) => (
           <li key={href}>
             <Link href={href} className="text-3xl hover:text-[#56898F]">
