@@ -41,7 +41,7 @@ export function Footer() {
           <li key={href}>
             <Link
               href={href}
-              onClick={playAudio(sound)}
+              
               className="text-3xl hover:text-[#56898F]"
             >
               {text}
