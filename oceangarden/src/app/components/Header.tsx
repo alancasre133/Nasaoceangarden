@@ -41,26 +41,6 @@ export function Header() {
       <Link href="/" className="flex gap-4 items-center hover:text-slate-300">
         <HomeLinkContent />
       </Link>
-
-      <nav className="w-full">
-        <ul className="flex items-center justify-end gap-11 list-none">
-          {isRoot === false &&
-            bareLinks.map(({ href, text }) => (
-              <li key={href}>
-                <Link href={href} className="hover:underline">
-                  {text}
-                </Link>
-              </li>
-            ))}
-        </ul>
-      </nav>
-
-      <button
-        onClick={toggleAudio}
-        className="flex items-center justify-center"
-      >
-        {isAudioPlaying ? <VolumeOff /> : <Volume />}
-      </button>
     </header>
   )
 }
