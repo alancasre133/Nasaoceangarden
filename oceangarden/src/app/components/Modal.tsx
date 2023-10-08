@@ -5,25 +5,52 @@ import Link from "next/link"
 import { Element } from "../types.d"
 import { CloseIcon, RightArrowIcon } from "./Icons"
 import { usePathname, useRouter } from "next/navigation"
+import { use, useState, useEffect } from "react"
+import { ELEMENTS } from "../constants"
 
-export function SectionPreviewModal({ modalText, videoSrc, href }: Element) {
+export function SectionPreviewModal({ modalText, videoSrc, href, soundSrc }: Element) {
   const router = useRouter()
   const pathname = usePathname()
-  // Close modal when clicking outside of it
-  const closeModal = () => {
-    // const dialog = document.querySelector("dialog")
-    // dialog?.classList.remove("open")
-    // dialog?.classList.add("close")
-    //
-    // setTimeout(() => {
-    //   dialog?.classList.remove("close")
-    // }, 1000)
+  const [isAudioPlaying, setIsAudioPlaying] = useState(true)
+  const [audio, setAudio] = useState<HTMLAudioElement | null>(null)
 
-    //     if (!closingSoundSrc) return
-    //
-    //     const closingSound = new Audio(closingSoundSrc)
-    //     closingSound.play()
-    router.push(pathname)
+
+  useEffect(() => {
+    const audio2 = new Audio(`/audio/${soundSrc}`);
+    setAudio(audio2);
+    audio2.play();
+
+    return () => {
+      if (audio2) {
+        audio2.pause();
+        setAudio(null);
+      }
+    };
+  }, []);
+
+  const closeModal = () => {
+    if (audio) {
+      audio.pause();
+      setAudio(null);
+    }
+    router.push(pathname);
+  };
+
+
+  const playAudio = (text: string) => () => {
+    if (!audio) {
+      const audio = new Audio(`/audio/${text}`)
+      setAudio(audio)
+      setIsAudioPlaying(true)
+      audio.play()
+    } else {
+      if (isAudioPlaying) {
+        audio.pause()
+        setAudio(null)
+      } else {
+        audio.play()
+      }
+    }
   }
 
   return (
@@ -44,8 +71,8 @@ export function SectionPreviewModal({ modalText, videoSrc, href }: Element) {
               <CloseIcon size={40} />
             </button>
             <header className="flex justify-between w-full gap-4 items-baseline">
-              <h2 className="font-semibold text-7xl">{modalText}</h2>
-              <Link href={href} className="flex items-center gap-3">
+              <h2 className="font-semibold text-5xl">{modalText}</h2>
+              <Link href={href} onClick={closeModal} className="flex items-center gap-3">
                 <span className="text-2xl">Learn more</span>
                 <RightArrowIcon />
               </Link>
