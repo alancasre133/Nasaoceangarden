@@ -2,6 +2,7 @@ import "./globals.css"
 import "./styles/stars-bg.css"
 import { Inter } from "next/font/google"
 import type { Metadata } from "next"
+import { Header } from "./components/Header"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -18,15 +19,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} w-full min-h-screen flex flex-col`}>
+      <body
+        className={`${inter.className} w-full max-w-5xl mx-auto min-h-screen flex flex-col px-2 pb-16`}
+      >
+        <Header />
+        <main className="flex flex-col items-center justify-between z-10 relative w-full max-w-5xl mx-auto h-full flex-1">
+          {children}
+        </main>
         <div className="background">
           <div id="stars"></div>
           <div id="stars2"></div>
           <div id="stars3"></div>
         </div>
-        <main className="flex flex-col items-center justify-between p-2 z-10 relative w-full max-w-5xl mx-auto h-full flex-1">
-          {children}
-        </main>
       </body>
     </html>
   )
