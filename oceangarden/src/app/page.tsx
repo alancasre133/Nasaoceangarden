@@ -1,9 +1,5 @@
-import Image from "next/image"
-import Rock from '@/app/rocket/page' 
+import Model from "@/components/Model3D/Earth"
+
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-gray-950">
-      Index
-    </main>
-  )
+  return <Model />
 }
