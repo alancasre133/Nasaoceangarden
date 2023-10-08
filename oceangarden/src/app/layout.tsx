@@ -3,7 +3,6 @@ import "./styles/stars-bg.css"
 import { Inter } from "next/font/google"
 import type { Metadata } from "next"
 import { Header } from "./components/Header"
-import { Footer } from "./components/Footer"
 import { CurrentModal } from "./components/CurrentModal"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -33,7 +32,6 @@ export default function RootLayout({
             <div id="stars2"></div>
             <div id="stars3"></div>
           </div>
-          <Footer />
         </div>
       </body>
     </html>
