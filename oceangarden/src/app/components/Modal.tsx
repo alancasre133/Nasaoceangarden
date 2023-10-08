@@ -12,6 +12,7 @@ export function SectionPreviewModal({
   videoSrc,
   href,
   soundSrc,
+  description,
 }: Element) {
   const router = useRouter()
   const pathname = usePathname()
@@ -69,19 +70,24 @@ export function SectionPreviewModal({
             src={videoSrc}
           />
           <div className="absolute top-0 bottom-0 h-full w-full max-h-screen p-16 bg-slate-900/40 items-end justify-between flex flex-col">
-            <button onClick={closeModal} className="w-full flex justify-end">
-              <CloseIcon size={40} />
-            </button>
-            <header className="flex justify-between w-full gap-4 items-baseline">
+            <div className="w-full flex justify-end">
+              <button onClick={closeModal}>
+                <CloseIcon size={40} />
+              </button>
+            </div>
+            <header className="flex flex-col gap-1 w-full">
               <h2 className="font-semibold text-5xl">{modalText}</h2>
-              <Link
-                href={href}
-                onClick={closeModal}
-                className="flex items-center gap-3"
-              >
-                <span className="text-2xl">Learn more</span>
-                <RightArrowIcon />
-              </Link>
+              <div className="flex justify-between w-full gap-10 items-baseline">
+                <p>{description}</p>
+                <Link
+                  href={href}
+                  onClick={closeModal}
+                  className="flex items-center gap-3"
+                >
+                  <span className="text-2xl whitespace-nowrap">Learn more</span>
+                  <RightArrowIcon />
+                </Link>
+              </div>
             </header>
           </div>
         </div>
