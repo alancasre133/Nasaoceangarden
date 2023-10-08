@@ -1,6 +1,7 @@
 "use client"
 
 import Model from "@/components/Model3D/Earth"
+import { useAutoAnimate } from "@formkit/auto-animate/react"
 import { useEffect, useState } from "react"
 
 const Home = () => {
@@ -149,10 +150,15 @@ const Home = () => {
     setShownOcean(ocean)
   }
 
+  const [parent] = useAutoAnimate(/* optional config */)
+
   return (
     <div className="flex w-full h-full gap-20">
       <Model cameraOrbit={pos} />
-      <header className="w-9/12 flex flex-col gap-10 justify-center">
+      <header
+        ref={parent}
+        className="w-9/12 flex flex-col gap-10 justify-center"
+      >
         {OCEANS.map(({ text, fn, description }) => (
           <article>
             <button

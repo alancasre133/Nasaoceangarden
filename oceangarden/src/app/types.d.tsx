@@ -8,6 +8,7 @@ export type Element = {
   closingSoundSrc: string
   modalText: string
   linkText: string
+  description?: string
 }
 
 export type ModalIds = keyof typeof ELEMENTS | null
