@@ -26,8 +26,8 @@ export function SectionPreviewModal({
   }
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 w-full px-8 py-16 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full m-auto backdrop-blur-sm">
-      <div className="relative max-w-4xl max-h-full w-full h-full m-auto">
+    <div className="fixed top-0 left-0 right-0 z-50 w-full px-8 py-24 h-full overflow-x-hidden overflow-y-auto md:inset-0  backdrop-blur-sm">
+      <div className="max-h-[546px] relative max-w-4xl  w-full h-full m-auto">
         <div className="relative h-full w-full bg-transparent rounded-2xl overflow-clip shadow">
           {/*  */}
           <video

@@ -1,7 +1,6 @@
-"use client";
+"use client"
 import Link from "next/link"
-import { useState } from "react";
-
+import { useState } from "react"
 
 const LINKS = [
   {
@@ -22,27 +21,23 @@ const LINKS = [
 ]
 
 export function Footer() {
-
-  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
-  const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false)
+  const [audio, setAudio] = useState<HTMLAudioElement | null>(null)
 
   const playAudio = (text: string) => () => {
-    
-    if(!audio) {
-      const audio = new Audio(`/audio/${text}.mp3`);
-      setAudio(audio);
-      setIsAudioPlaying(true);
-      audio.play();
+    if (!audio) {
+      const audio = new Audio(`/audio/${text}.mp3`)
+      setAudio(audio)
+      setIsAudioPlaying(true)
+      audio.play()
     } else {
-      if(isAudioPlaying) {
-        audio.pause();
-        setAudio(null);
+      if (isAudioPlaying) {
+        audio.pause()
+        setAudio(null)
       } else {
-        audio.play();
+        audio.play()
       }
     }
-    
-    
   }
 
   return (
@@ -50,9 +45,13 @@ export function Footer() {
       <ul className="flex flex-col gap-28 md:flex-row items-center justify-center flex-wrap">
         {LINKS.map(({ href, text, sound }) => (
           <li key={href}>
-            <button onClick={playAudio(sound)} className="text-3xl hover:text-[#56898F]">
+            <Link
+              href={href}
+              onClick={playAudio(sound)}
+              className="text-3xl hover:text-[#56898F]"
+            >
               {text}
-            </button>
+            </Link>
           </li>
         ))}
       </ul>
