@@ -1,14 +1,14 @@
+"use client"
+
 import "@/app/styles/modal.css"
 import Link from "next/link"
 import { Element } from "../types.d"
+import { CloseIcon, RightArrowIcon } from "./Icons"
+import { usePathname, useRouter } from "next/navigation"
 
-export function SectionPreviewModal({
-  modalText,
-  videoSrc,
-  href,
-  soundSrc,
-  closingSoundSrc,
-}: Element) {
+export function SectionPreviewModal({ modalText, videoSrc, href }: Element) {
+  const router = useRouter()
+  const pathname = usePathname()
   // Close modal when clicking outside of it
   const closeModal = () => {
     // const dialog = document.querySelector("dialog")
@@ -19,14 +19,16 @@ export function SectionPreviewModal({
     //   dialog?.classList.remove("close")
     // }, 1000)
 
-    if (!closingSoundSrc) return
-
-    const closingSound = new Audio(closingSoundSrc)
-    closingSound.play()
+    //     if (!closingSoundSrc) return
+    //
+    //     const closingSound = new Audio(closingSoundSrc)
+    //     closingSound.play()
+    router.push(pathname)
   }
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 w-full px-8 py-24 h-full overflow-x-hidden overflow-y-auto md:inset-0  backdrop-blur-sm">
+      {/* <audio autoPlay loop src={soundSrc}></audio> */}
       <div className="max-h-[546px] relative max-w-4xl  w-full h-full m-auto">
         <div className="relative h-full w-full bg-transparent rounded-2xl overflow-clip shadow">
           {/*  */}
@@ -37,11 +39,17 @@ export function SectionPreviewModal({
             loop
             src={videoSrc}
           />
-          <div className="absolute top-0 bottom-0 h-full w-full max-h-screen p-16 bg-slate-900/40 items-end justify-start flex">
-            <h2 className="font-semibold text-7xl">
-              <Link href={href}>{modalText}</Link>
-            </h2>
-            <audio autoPlay loop src={soundSrc}></audio>
+          <div className="absolute top-0 bottom-0 h-full w-full max-h-screen p-16 bg-slate-900/40 items-end justify-between flex flex-col">
+            <button onClick={closeModal} className="w-full flex justify-end">
+              <CloseIcon size={40} />
+            </button>
+            <header className="flex justify-between w-full gap-4 items-baseline">
+              <h2 className="font-semibold text-7xl">{modalText}</h2>
+              <Link href={href} className="flex items-center gap-3">
+                <span className="text-2xl">Learn more</span>
+                <RightArrowIcon />
+              </Link>
+            </header>
           </div>
         </div>
       </div>

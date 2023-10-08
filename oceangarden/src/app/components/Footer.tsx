@@ -2,11 +2,14 @@
 import Link from "next/link"
 import { useState } from "react"
 import { ELEMENTS } from "../constants"
+import { usePathname } from "next/navigation"
 
 export function Footer() {
+  const pathname = usePathname()
+
   const FOOTER_LINKS = Object.values(ELEMENTS).map(
     ({ id, linkText, soundSrc }) => ({
-      href: `/?modal=${id}`,
+      href: `${pathname}?modal=${id}`,
       text: linkText,
       sound: soundSrc,
     }),
@@ -33,7 +36,7 @@ export function Footer() {
 
   return (
     <footer className="z-10 w-full pt-4">
-      <ul className="flex flex-col gap-28 md:flex-row items-center justify-center flex-wrap">
+      <ul className="flex flex-col gap-x-28 md:flex-row items-center justify-center flex-wrap gap-y-1">
         {FOOTER_LINKS.map(({ href, text, sound }) => (
           <li key={href}>
             <Link
