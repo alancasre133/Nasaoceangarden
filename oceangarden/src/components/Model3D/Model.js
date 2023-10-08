@@ -96,6 +96,7 @@ const Model = () => {
         rotation-per-second="0.0001"
         camera-controls // Utiliza solo los controles de órbita
         camera-orbit={pos}
+        disable-zoom
         brightness="1.5"
         disable-pan
       ></model-viewer>
