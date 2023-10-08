@@ -5,7 +5,7 @@ const DynamicComponent = dynamic(() => {
     if(isMobile){
       return import("@/components/Model3D/Astro");
     }
-    return import ("@/components/Model3D/Model"); 
+    return import ("@/components/Model3D/Earth"); 
   }, {
   loading: () => <p>Loading...</p>,
 })
