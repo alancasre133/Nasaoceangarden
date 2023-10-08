@@ -80,3 +80,60 @@ export const OCEANS = {
   },
 
 }
+
+export const PHYTOPLANKTON = {
+    what_is: {
+      
+      
+          title: "What is phytoplankton?",
+          description: "Phytoplankton is a group of microscopic organisms, primarily algae, that perform photosynthesis and form the foundation of the marine food chain. Phytoplankton species vary by region and ocean conditions, including factors such as water temperature, nutrient availability, and the amount of sunlight.",
+        
+      
+    }, 
+    diamons: {
+      
+      
+          title: "Diatoms",
+          description: "Single-celled algae with silica shells that form geometric structures. They are an important source of oxygen and are found in both cold and warm waters.",
+        
+      
+    },
+    dinoflagellates: {
+      
+      
+          title: "Dinoflagellates",
+          description: "Single-celled algae with two flagella that propel them through the water. They are found in both freshwater and marine environments.",
+    },
+    cyano: {
+      
+      
+          title: "CyanoBacteria (Blue-Green Algae)",
+          description: "Photosynthetic bacteria that often form harmful algal blooms and can produce toxins in certain conditions.",
+    },
+    coccolithophores: {
+      
+      
+          title: "Coccolithophores",
+          description: "Single-celled microorganisms with small calcareous plates called coccoliths on their surface. They contribute to the formation of marine sediments.",
+    },
+    euglenoids: {
+      
+      
+          title: "Euglenoids",
+          description: "Flagellated single-celled organisms that can be autotrophic or heterotrophic, meaning they can perform photosynthesis or feed on other microorganisms.",
+    },
+    silicoflagellates: {
+      
+      
+          title: "Silicoflagellates",
+          description: "Single-celled microorganisms with silica structures resembling spines. They are found in silica-rich waters and serve as a food source for other marine organisms.",
+    },
+    desc: {
+      
+      
+          title: "",
+          description: "Phytoplankton is a group of microscopic organisms, primarily algae, that perform photosynthesis and form the foundation of the marine food chain. Phytoplankton species vary by region and ocean conditions, including factors such as water temperature, nutrient availability, and the amount of sunlight.",
+    },
+      
+        
+}
