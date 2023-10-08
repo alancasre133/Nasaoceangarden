@@ -4,14 +4,13 @@ import Astro from '@/components/Model3D/Astro';
 import EarthModel from '@/components/Model3D/Earth';
 
 const Model = () => {
-    return (
-        <div>
-            {isMobile ? 
-                <Astro /> : 
-                <EarthModel />
-                }
-        </div>
-    );
+    if (isMobile) {
+        return (<Astro></Astro>)
+    }
+    
+    return <EarthModel/> 
+        
+    
 }
 
 export default Model;
