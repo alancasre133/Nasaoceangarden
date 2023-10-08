@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Ocean Gardens",
   description:
     "An accessible platform that visually, sonically, and interactively educates users about ocean-provided services in a way they can easily understand. ",
+    
 }
 
 export default function RootLayout({
