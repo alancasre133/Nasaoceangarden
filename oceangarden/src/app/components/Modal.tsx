@@ -46,7 +46,7 @@ export function SectionPreviewModal({ modalText, videoSrc, href }: Element) {
             <header className="flex justify-between w-full gap-4 items-baseline">
               <h2 className="font-semibold text-7xl">{modalText}</h2>
               <Link href={href} className="flex items-center gap-3">
-                <span className="text-2xl">Conocer más</span>
+                <span className="text-2xl">Learn more</span>
                 <RightArrowIcon />
               </Link>
             </header>
