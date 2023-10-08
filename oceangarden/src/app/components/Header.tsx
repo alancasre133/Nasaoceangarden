@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Logo } from "./Logo"
 import { Headphones, HeadphonesOff } from "./Icons"
+import Link from "next/link"
 
 export function Header() {
   const [isAudioPlaying, setIsAudioPlaying] = useState(false)
@@ -13,7 +14,9 @@ export function Header() {
 
   return (
     <header className="flex gap-4 justify-between items-center w-full py-8 z-10">
-      <Logo />
+      <Link href="/">
+        <Logo />
+      </Link>
       <button
         onClick={toggleAudio}
         className="flex items-center justify-center"
