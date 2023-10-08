@@ -1,23 +1,10 @@
 "use client";
-import React, { useEffect } from 'react';
+import React from 'react';
 
-const Atlas = () => {
+const Astro = () => {
     
-  useEffect(() => {
-    const modelViewer = document.querySelector('model-viewer');
-
-    if (modelViewer) {
-      // Add a click event listener to the model-viewer component
-      modelViewer.addEventListener('click', function (event) {
-        // Handle the click event here
-        console.log('Model clicked!', event);
-        // You can perform any action or interaction you want here
-      });
-    }
-  }, []);
-
   return (
-    <div style={{ width: "100vw", height: "100vh" }}>
+    <div style={{ width: "80vw", height: "70vh" }}>
       <model-viewer
         src="astro.glb"
         alt="A 3D model of an astronaut"
@@ -41,5 +28,5 @@ const Atlas = () => {
   );
 };
 
-export default Atlas;
+export default Astro;
     
