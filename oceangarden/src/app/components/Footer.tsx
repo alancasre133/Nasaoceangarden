@@ -2,11 +2,14 @@
 import Link from "next/link"
 import { useState } from "react"
 import { ELEMENTS } from "../constants"
+import { usePathname } from "next/navigation"
 
 export function Footer() {
+  const pathname = usePathname()
+
   const FOOTER_LINKS = Object.values(ELEMENTS).map(
     ({ id, linkText, soundSrc }) => ({
-      href: `/?modal=${id}`,
+      href: `${pathname}?modal=${id}`,
       text: linkText,
       sound: soundSrc,
     }),
