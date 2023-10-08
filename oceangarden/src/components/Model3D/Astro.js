@@ -10,7 +10,7 @@ const Astro = () => {
         auto-rotate
         ar 
         ar-modes="webxr scene-viewer"
-        style={{ width: "100%", height: "100%", backgroundColor: "#000000"}}
+        style={{ width: "100%", height: "100%", backgroundColor: "transparent"}}
         camera-controls
       ></model-viewer>
       <script
