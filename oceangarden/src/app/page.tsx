@@ -1,5 +1,7 @@
-import Model from "@/components/Model3D/Earth"
+import MainModel from './components/MainModel';
 
-export default function Home() {
-  return <Model />
+const Home = () => {
+    return <MainModel/>
 }
+
+export default Home

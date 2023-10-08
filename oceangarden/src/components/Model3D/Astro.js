@@ -1,5 +1,4 @@
 "use client";
-import React from 'react';
 
 const Astro = () => {
     
@@ -12,12 +11,7 @@ const Astro = () => {
         ar 
         ar-modes="webxr scene-viewer"
         style={{ width: "100%", height: "100%", backgroundColor: "#000000"}}
-        shadow-intensity="10"
-        rotation-per-second="0.0001"
-        camera-controls="orbit" // Utiliza solo los controles de órbita
-        camera-orbit="80deg 65deg 0deg"
-        brightness="1.5"
-        disable-pan
+        camera-controls
       ></model-viewer>
       <script
         async
