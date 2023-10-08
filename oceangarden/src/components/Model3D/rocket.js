@@ -19,7 +19,7 @@ const Atlas = () => {
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
       <model-viewer
-        src="atlas.glb"
+        src="Chaetoceros_Model.glb"
         alt="A 3D model of an astronaut"
         auto-rotate
         ar 
