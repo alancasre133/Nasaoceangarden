@@ -71,12 +71,44 @@ const Home = () => {
     }
   }
 
+  const buttonPos4 = () => {
+    const modelViewer = document.querySelector("model-viewer")
+    if (num == 0) {
+      setNum(1)
+      setPos("0deg 0deg 1deg")
+    } else {
+      setPos("0deg 0deg 0deg")
+      setNum(0)
+    }
+    if (pausar === true) {
+      modelViewer?.removeAttribute("auto-rotate")
+      setPausar(false)
+    }
+  }
+
+  const buttonPos5 = () => {
+    const modelViewer = document.querySelector("model-viewer")
+    if (num == 0) {
+      setNum(1)
+      setPos("180deg 180deg 1deg")
+    } else {
+      setPos("180deg 180deg 0deg")
+      setNum(0)
+    }
+    if (pausar === true) {
+      modelViewer?.removeAttribute("auto-rotate")
+      setPausar(false)
+    }
+  }
+
   return (
     <div className="w-full h-full">
       <header>
         <button onClick={buttonPos}>Pacifico</button>
         <button onClick={buttonPos2}>Atlantico</button>
         <button onClick={buttonPos3}>Indico</button>
+        <button onClick={buttonPos4}>Artico</button>
+        <button onClick={buttonPos5}>Artantico</button>
       </header>
       <Model cameraOrbit={pos} />
     </div>
