@@ -2,15 +2,15 @@ import Link from "next/link"
 
 const LINKS = [
   {
-    href: "oceans",
+    href: "/?modal=oceans",
     text: "About oceans",
   },
   {
-    href: "phytoplankton",
+    href: "/?modal=phytoplankton",
     text: "Phytoplankton",
   },
   {
-    href: "gardens",
+    href: "/?modal=gardens",
     text: "Explore gardens",
   },
 ]
