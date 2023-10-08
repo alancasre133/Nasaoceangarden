@@ -9,22 +9,22 @@ const MODALS: Record<string, Modal> = {
     text: "Oceans",
     videoSrc: "/video/ocean.mp4",
     href: "/oceans",
-    soundSrc: "/audio/ocean.mp3",
-    closingSoundSrc: "/audio/ocean.mp3",
+    soundSrc: "/audio/oceans.mp3",
+    closingSoundSrc: "/audio/oceans.mp3",
   },
   phytoplankton: {
     text: "Phytoplankton",
     videoSrc: "/video/phytoplankton.mp4",
     href: "/phytoplankton",
-    soundSrc: "/audio/phytoplankton.mp3",
-    closingSoundSrc: "/audio/phytoplankton.mp3",
+    soundSrc: "/audio/underwater.mp3",
+    closingSoundSrc: "/audio/underwater.mp3",
   },
   gardens: {
     text: "Explore gardens",
     videoSrc: "/video/gardens.mp4",
     href: "/gardens",
-    soundSrc: "/audio/gardens.mp3",
-    closingSoundSrc: "/audio/gardens.mp3",
+    soundSrc: "/audio/planc.mp3",
+    closingSoundSrc: "/audio/planc.mp3",
   },
 }
 
